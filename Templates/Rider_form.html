@@ -1,0 +1,17 @@
+
+
+<html>
+ {% extends "base.html" %}
+
+ {% block content %}
+
+<form method="POST" action="submit_travel_info">
+    {% csrf_token %}
+{{rider_form.as_p}}
+<button type="submit">Request</button>
+</form>
+
+
+{% endblock %}
+
+</html>

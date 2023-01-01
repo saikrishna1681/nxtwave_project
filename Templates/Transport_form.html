@@ -1,0 +1,16 @@
+
+<html>
+    
+{% extends "base.html" %}
+{% block content %}
+
+    <form action="submit_transport_request" method="POST">
+        {% csrf_token %}
+    {{transport_form.as_p}}
+    <button type="submit">Request</button>
+    </form>
+
+
+    {% endblock %}
+
+</html>

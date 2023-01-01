@@ -1,0 +1,41 @@
+<html>
+    {% extends "base.html" %}
+    {% block content %}
+    <table>
+    <thead>
+    <tr>
+    <th style="width : 70px;  padding : 7px;  overflow: auto">ID</th>
+    <th style="width : 70px;  padding : 7px;  overflow: auto" >FROM</th>
+    <th style="width : 70px;  padding : 7px;  overflow: auto">TO</th>
+    <th style="width : 70px;  padding : 7px;  overflow: auto">DATE TIME</th>
+    <th style="width : 70px;  padding : 7px;  overflow: auto">NO OF ASSETS</th>
+    <th style="width : 70px;  padding : 7px;  overflow: auto">ASSET TYPE</th>
+    <th style="width : 70px;  padding : 7px;  overflow: auto">ASSET SENSITIVITY</th>
+    <th style="width : 70px;  padding : 7px;  overflow: auto">WHOM TO DELIVER</th>
+    <th style="width : 70px;  padding : 7px;  overflow: auto">ACCEPTED PERSON DETAILS</th>
+    <th style="width : 70px;  padding : 7px;  overflow: auto">STATUS</th>
+    <th style="width : 70px;  padding : 7px;  overflow: auto">View Matches</th>
+    </tr>
+    </thead>
+    {% for i in required_data %}
+    <tr>
+        <td style="width : 70px;  padding : 7px;  overflow: auto">{{i.id}}</td>
+        <td style="width : 70px;  padding : 7px;  overflow: auto">{{i.FROM}}</td>
+        <td style="width : 70px;  padding : 7px;  overflow: auto">{{i.TO}}</td>
+        <td style="width : 70px;  padding : 7px;  overflow: auto">{{i.date_time}}</td>
+        <td style="width : 70px;  padding : 7px;  overflow: auto">{{i.assets_quantity}}</td>
+        <td style="width : 70px;  padding : 7px;  overflow: auto">{{i.asset_type}}</td>
+        <td style="width : 70px;  padding : 7px;  overflow: auto">{{i.asset_sensitivity}}</td>
+        <td style="width : 70px;  padding : 7px;  overflow: auto">{{i.whom_to_deliver}}</td>
+        <td style="width : 70px;  padding : 7px;  overflow: auto">{{i.accepted_person_details}}</td>
+        <td style="width : 70px;  padding : 7px;  overflow: auto">{{i.status}}</td>
+        <td><a href=view_matched_rides/{{i.id}} >View Matched Rides</a></td>
+    </tr>
+
+    {% endfor %}
+    </table>
+
+    {% endblock %}
+
+
+</html>
